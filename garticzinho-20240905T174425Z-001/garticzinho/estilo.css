@@ -1,0 +1,217 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(95, 154, 244);
+    font-family: Arial, sans-serif;
+    /*background-color: #f4f4f4;*/
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5rem;
+}
+.chat-container {
+    position: relative;
+}
+.entrar_submit{
+    border: 1px solid white;
+    border-radius: 36px;
+}
+.msg_submit{
+    border: 1px solid black;
+}
+.sair_submit{
+    background-color: red;
+}
+.chat-box {
+    margin-top: 8rem;
+}
+.messages {
+    height: 300px;
+    width: 500px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    padding: 1em;
+    overflow: scroll;
+    background-color: white;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+}
+#toolbar{
+    border: 1px solid black;
+    height: 600px;
+    width: 60px;
+    align-items: center;
+
+}
+#toolbar > button{
+    height: 30px;
+    width: 50%;
+}
+#toolbar > img:first-child {
+    margin-top: 2rem;
+}
+#toolbar > img{
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -o-user-select:none;
+    caret-color: transparent;
+}
+form button {
+    display: block;
+    background: rgb(39, 112, 215);
+    padding: 5px;
+    margin: 5px 0;
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    color: white;
+}
+
+form.msg-form {
+    bottom: 1em;
+    right: 1em;
+    left: 1em;
+}
+form.close-form button {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    border-radius: 5px;
+}
+form.close-form button:hover {
+    background-color: rgb(234, 28, 28);
+    transition: 1s;
+}
+.hidden {
+    display: none;
+}
+
+.msg {
+    margin-bottom: 5px;
+}
+.msg-text {
+    padding: 5px;
+    display: inline-block;
+    border-radius: 5px;
+}
+.msg-normal .msg-text {
+    background:rgb(39, 112, 215);
+    color: white;
+}
+
+.msg-notification .msg-text,
+.msg-join .msg-text,
+.msg-left .msg-text,
+.msg-new_drawer .msg-new_drawer_draw  {
+    background: #eee;
+    border: 1px solid #ccc;
+}
+
+.msg-notification .msg-sender,
+.msg-join .msg-sender, 
+.msg-left .msg-sender,
+.msg-new_drawer .msg-new_drawer_draw {
+    display: none;
+}
+canvas{
+    border: 10px solid black;
+    border-radius: 30px;
+    background-color: white;
+}
+
+#colorPickerCard {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+}
+.color-square {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.palavra{
+    display: none;
+    margin-top: 2px;
+    margin-bottom: 1px;
+}
+.dica{
+    display: none;
+    color: white;
+}
+.leaderboard {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 300px;
+    position: relative;
+}
+
+.leaderboard-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    transition: transform 0.5s;
+}
+
+.leaderboard-item.changed {
+    background-color: #e0f7fa;
+    transform: translateX(10px);
+}
+
+.username {
+    font-weight: bold;
+}
+
+.points {
+    color: #333;
+}
+
+.points-change {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #4caf50;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.points-change.show {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Bar</title>
+    <style>
+        .progress-container {
+            width: 600px;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 100%; /* Start full */
+            background-color: #76c7c0;
+            transition: width 1s linear;
+        }
+
+        .timer {
+            margin-top: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="timer" id="timer">120s</div>
+
+    <script>
+        const totalTime = 120; // Total time in seconds
+        let currentTime = totalTime;
+
+        const progressBar = document.getElementById('progressBar');
+        const timer = document.getElementById('timer');
+
+        const updateProgressBar = () => {
+            currentTime--;
+            const progressPercentage = (currentTime / totalTime) * 100;
+            progressBar.style.width = progressPercentage + '%';
+
+            timer.textContent = currentTime + 's';
+
+            if (currentTime <= 0) {
+                clearInterval(progressInterval);
+            }
+        };
+
+        const progressInterval = setInterval(updateProgressBar, 1000); // Update every second
+    </script>
+</body>
+</html>
